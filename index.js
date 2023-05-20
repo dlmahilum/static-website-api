@@ -4,7 +4,7 @@ const app = express();
 const port = 5050;
 
 app.get('/', (req, res) => {
-    res.send('hello world').status(200);
+    res.send('Welcome to my portfolio API!').status(200);
 });
 
 app.listen(port, () => {
