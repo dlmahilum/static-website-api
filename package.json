@@ -9,10 +9,12 @@
   "author": "Doua LLoyd Mahilum",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.5.0"
   },
   "type": "module",
-  "engine":{
-  "node": "16.20.0"
+  "engine": {
+    "node": "16.20.0"
   }
 }
