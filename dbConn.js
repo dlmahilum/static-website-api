@@ -1,18 +1,17 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 
 const connectionString = process.env.ATLAS_URI || '';
+mongoose.connect(connectionString);
+const db = mongoose.connection;
 
-const client = new MongoClient(connectionString);
 
-let conn;
-try{
-    conn = await client.connect();
-}catch (e){
-    console.error(e);
-}
+db.on("error", (err) => {
+    console.error(err);
+});
 
-let db = conn.db('portfolio_api_db');
-export default db;
+db.once("connected", () => {
+    console.log("Database connection established");
+});
